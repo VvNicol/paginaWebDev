@@ -1,25 +1,150 @@
 body {
-  background: #111;
+  margin: 0;
+  padding: 0;
+  border: none; /* Asegúrate de que no haya borde */
+  background-color: black; /* Establece el fondo negro */
 }
 
+.navbar-dark.bg-dark {
+     background-color: #0E1B3D !important;  /* Asegúrate de que el fondo sea negro */
+}
+
+
+/* Personalización del botón de Bootstrap CONTACTO */
+.btn.bg-info {
+  font-family: Jost, sans-serif;
+  font-weight: bold;
+  background-color: transparent; /* Fondo transparente */
+  color: #fff; /* Color del texto */
+  border: none; /* Sin bordes */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0); /* Sombra inicial */
+  transition: all 0.3s ease; /* Transición suave para los efectos */
+  padding: 10px 20px; /* Espaciado interno para que el botón se vea más grande */
+  border-radius: 0; /* Bordes cuadrados por defecto */
+}
+
+/* Efecto hover */
+.btn.bg-info:hover {
+  background-color: rgba(34, 155, 244, 0.2); /* Fondo al pasar el mouse */
+  box-shadow: 0 0 10px rgba(34, 155, 244, 1), 0 0 20px rgba(34, 155, 244, 0.5); /* Sombra de neón */
+  text-shadow: 1px 1px 2px #fff; /* Efecto de sombra de texto */
+  border-radius: 15px; /* Bordes redondeados al pasar el mouse */
+}
+
+/* Estilo del botón cuando está activo o enfocado */
+.btn.bg-info:focus {
+  outline: none; /* Sin contorno */
+  box-shadow: 0 0 10px rgba(34, 155, 244, 1), 0 0 20px rgba(34, 155, 244, 0.5); /* Sombra de neón */
+  border-radius: 30px; /* Bordes redondeados al hacer foco */
+}
+
+
+
+/*Icono flecha abajo*/
+.bi {
+  position: absolute;
+  top: 55%; /* Ajusta la posición vertical según sea necesario */
+  left: 59rem; /* Ajusta la posición horizontal */
+  transform: translate(-50%, -50%); /* Centra el icono */
+  font-size: 5rem; /* Tamaño del icono (puedes ajustar esto) */
+  color: white; /* Color del icono */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+  animation: bounce 0.5s infinite alternate; /* Animación de rebote */
+}
+
+.animatedColor {
+  color: white;
+}
+
+.flecha {
+  animation: arrow 1s ease-in-out infinite;
+  font-size: 50px; /* Este valor se puede ajustar o eliminar si no se usa */
+}
+
+.flecha:hover {
+  animation: arrow 1s ease-out infinite !important ;
+  color: #229bf4;
+}
+
+/* ESTILOS TEXTO INICIO */
 .text {
   font-family: Jost, sans-serif;
   font-weight: bold;
   font-size: 4rem;
-  background-image: linear-gradient(var(--angle), hotpink, indigo);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-
+  color: white; /* Color blanco para mayor contraste */
+  text-shadow: 0 0 10px rgba(34, 155, 244, 0.8), 0 0 20px rgba(34, 155, 244, 0.6); /* Efecto neón azul más pronunciado */
   animation: move 4s linear alternate infinite;
 }
 
+.texto-sobre-imagen {
+  position: absolute;
+  top: 50%; /* Ajusta la posición vertical */
+  left: 50%; /* Ajusta la posición horizontal */
+  transform: translate(-50%, -50%); /* Centra el texto */
+  font-size: 4rem; /* Tamaño del texto */
+  font-weight: bold; /* Negrita */
+  text-align: center; /* Centra el texto */
+  font-family: Jost, sans-serif;
+
+  /* Color blanco */
+  color: #ffff; /* Color blanco */
+  
+  /* Sombra para el efecto neón azul */
+  text-shadow: 0 0 10px rgba(34, 155, 244, 0.8), 0 0 20px rgba(34, 155, 244, 0.6); /* Sombra azul */
+  
+  /* Efecto de neón */
+  animation: neon 1.5s ease-in-out infinite alternate; /* Agrega la animación de neón */
+  
+  padding: 1rem; /* Espaciado alrededor del texto */
+  border-radius: 8px; /* Bordes redondeados */
+  
+  transition: text-shadow 0.5s ease, color 0.5s ease; /* Transición suave para la sombra y el color */
+}
+
+/* Animación letra principal */
 @keyframes move {
-  0% { --angle: 0.25turn }
-  100% { --angle: 0.75turn }
+  0% { --angle: 0.25turn; }
+  100% { --angle: 0.75turn; }
 }
 
 @property --angle {
   syntax: "<angle>";
   inherits: false;
   initial-value: 0turn;
+}
+
+.contenedor-imagen {
+  position: relative;
+  width: 100%;
+  display: inline-block; /* Para ajustar al tamaño de la imagen */
+}
+
+/* Animación de neón texto*/
+@keyframes neon {
+  0% {
+    text-shadow: 0 0 10px rgba(34, 155, 244, 0.8), 0 0 20px rgba(34, 155, 244, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(34, 155, 244, 1), 0 0 25px rgba(34, 155, 244, 1);
+  }
+}
+
+/* Efecto hover */
+.texto-sobre-imagen:hover {
+  text-shadow: none !important; /* Quitar la sombra al pasar el mouse */
+  color: #ffff; /* Asegúrate de que el color se mantenga blanco al hacer hover */
+  animation: none; /* Detener la animación al hacer hover */
+}
+
+/*Animacion flecha*/
+@keyframes arrow {
+  0% {
+    transform: translate(0px, 50px);
+  }
+  50% {
+    transform: translate(0px, 60px);
+  }
+  100% {
+    transform: translate(0px, 50px);
+  }
 }
