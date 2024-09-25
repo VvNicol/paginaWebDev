@@ -1,0 +1,25 @@
+body {
+  background: #111;
+}
+
+.text {
+  font-family: Jost, sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  background-image: linear-gradient(var(--angle), hotpink, indigo);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: move 4s linear alternate infinite;
+}
+
+@keyframes move {
+  0% { --angle: 0.25turn }
+  100% { --angle: 0.75turn }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0turn;
+}
